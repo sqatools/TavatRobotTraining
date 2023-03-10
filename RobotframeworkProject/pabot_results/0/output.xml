@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230301 16:02:32.010" rpa="false" schemaversion="3">
+<suite id="s1" name="PaybotTest" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest">
+<suite id="s1-s1" name="First Robot Selenium Parallel1" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel1.robot">
+<test id="s1-s1-t1" name="Scroll to the element and verify" line="39">
+<kw name="Open browser and launch url" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>This keyword will open browser and launch url</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>${test_browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230301 16:02:32.389" level="INFO">Opening browser 'chrome' to base url 'https://automationbysqatools.blogspot.com/2021/05/dummy-website.html'.</msg>
+<status status="PASS" starttime="20230301 16:02:32.388" endtime="20230301 16:04:09.409"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230301 16:04:09.420" endtime="20230301 16:04:09.436"/>
+</kw>
+<status status="PASS" starttime="20230301 16:02:32.387" endtime="20230301 16:04:09.437"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://automationbysqatools.blogspot.com/p/python.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230301 16:04:09.440" level="INFO">Opening url 'https://automationbysqatools.blogspot.com/p/python.html'</msg>
+<status status="PASS" starttime="20230301 16:04:09.439" endtime="20230301 16:04:54.246"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>xpath=//a[text()='onlinetraining']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230301 16:04:54.248" endtime="20230301 16:04:54.621"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230301 16:04:56.632" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230301 16:04:54.624" endtime="20230301 16:04:56.632"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath=//a[text()='onlinetraining']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230301 16:04:56.646" level="INFO">Current page contains element 'xpath=//a[text()='onlinetraining']'.</msg>
+<status status="PASS" starttime="20230301 16:04:56.634" endtime="20230301 16:04:56.646"/>
+</kw>
+<kw name="Close All Browser On the System" type="TEARDOWN">
+<doc>Close all opened browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230301 16:04:56.654" endtime="20230301 16:05:04.642"/>
+</kw>
+<status status="PASS" starttime="20230301 16:04:56.651" endtime="20230301 16:05:04.642"/>
+</kw>
+<status status="PASS" starttime="20230301 16:02:32.387" endtime="20230301 16:05:04.642"/>
+</test>
+<status status="PASS" starttime="20230301 16:02:32.039" endtime="20230301 16:05:04.647"/>
+</suite>
+<status status="PASS" starttime="20230301 16:02:32.020" endtime="20230301 16:05:05.478"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PaybotTest">PaybotTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="First Robot Selenium Parallel1">PaybotTest.First Robot Selenium Parallel1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230301 16:02:32.369" level="ERROR">Error in file 'E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel1.robot' on line 6: Resource file 'locators.robot' does not exist.</msg>
+</errors>
+</robot>

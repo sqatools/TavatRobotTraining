@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230309 14:42:48.907" rpa="false" schemaversion="3">
+<suite id="s1" name="First Robot Goibibo Testcases2" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\goibibo_website\first_robot_goibibo_testcases2.robot">
+<kw name="Run Keyword If" library="BuiltIn" type="SETUP">
+<arg>'${url}' == 'https://www.goibibo.com/'</arg>
+<arg>Run Keywords</arg>
+<arg>Open Excel Document</arg>
+<arg>test_data.xlsx</arg>
+<arg>doc_id=2</arg>
+<arg>AND</arg>
+<arg>Get Url</arg>
+<arg>AND</arg>
+<arg>Open browser and launch url</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>AND</arg>
+<arg>maximize browser window</arg>
+<arg>AND</arg>
+<arg>Close Signup Popup IfExist</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Wrong URL ${url}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Run Keywords" library="BuiltIn">
+<arg>Open Excel Document</arg>
+<arg>test_data.xlsx</arg>
+<arg>doc_id=2</arg>
+<arg>AND</arg>
+<arg>Get Url</arg>
+<arg>AND</arg>
+<arg>Open browser and launch url</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>AND</arg>
+<arg>maximize browser window</arg>
+<arg>AND</arg>
+<arg>Close Signup Popup IfExist</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>test_data.xlsx</arg>
+<arg>doc_id=2</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230309 14:42:49.577" endtime="20230309 14:42:49.687"/>
+</kw>
+<kw name="Get Url">
+<kw name="read data excel sheet">
+<var>${url}</var>
+<arg>${url_cell}[0]</arg>
+<arg>${url_cell}[1]</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${file_path}</arg>
+<arg>doc_id=1</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230309 14:42:49.688" endtime="20230309 14:42:49.695"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${cell_value}</var>
+<arg>${row}</arg>
+<arg>${colom}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230309 14:42:49.696" level="INFO">${cell_value} = https://www.goibibo.com/</msg>
+<status status="PASS" starttime="20230309 14:42:49.695" endtime="20230309 14:42:49.696"/>
+</kw>
+<msg timestamp="20230309 14:42:49.696" level="INFO">${url} = https://www.goibibo.com/</msg>
+<status status="PASS" starttime="20230309 14:42:49.688" endtime="20230309 14:42:49.696"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${url}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230309 14:42:49.696" level="INFO">${url} = https://www.goibibo.com/</msg>
+<status status="PASS" starttime="20230309 14:42:49.696" endtime="20230309 14:42:49.696"/>
+</kw>
+<kw name="Close All Excel Documents" library="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" starttime="20230309 14:42:49.696" endtime="20230309 14:42:49.697"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:49.687" endtime="20230309 14:42:49.697"/>
+</kw>
+<kw name="Open browser and launch url" library="robot_goibibokeyword">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>This keyword will open browser and launch url</doc>
+<if>
+<branch type="IF" condition="'${test_browser}' == 'chrome'">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230309 14:42:49.698" level="INFO">Opening browser 'chrome' to base url 'https://www.goibibo.com/'.</msg>
+<status status="PASS" starttime="20230309 14:42:49.697" endtime="20230309 14:42:58.297"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:49.697" endtime="20230309 14:42:58.298"/>
+</branch>
+<branch type="ELSE IF" condition="'${test_browser}' == 'firefox'">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.299" endtime="20230309 14:42:58.299"/>
+</kw>
+<status status="NOT RUN" starttime="20230309 14:42:58.298" endtime="20230309 14:42:58.299"/>
+</branch>
+<branch type="ELSE IF" condition="'${test_browser}' == 'edge'">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.300" endtime="20230309 14:42:58.301"/>
+</kw>
+<status status="NOT RUN" starttime="20230309 14:42:58.299" endtime="20230309 14:42:58.302"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>Invalid browser name</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.304" endtime="20230309 14:42:58.304"/>
+</kw>
+<status status="NOT RUN" starttime="20230309 14:42:58.302" endtime="20230309 14:42:58.304"/>
+</branch>
+<status status="PASS" starttime="20230309 14:42:49.697" endtime="20230309 14:42:58.304"/>
+</if>
+<status status="PASS" starttime="20230309 14:42:49.697" endtime="20230309 14:42:58.304"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230309 14:42:58.305" endtime="20230309 14:42:58.313"/>
+</kw>
+<kw name="Close Signup Popup IfExist" library="robot_goibibokeyword">
+<doc>Close Signup Popup IfExist</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>wait until element is visible</arg>
+<arg>${SignupPopup}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SignupPopup}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230309 14:42:58.315" endtime="20230309 14:42:58.371"/>
+</kw>
+<msg timestamp="20230309 14:42:58.371" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20230309 14:42:58.314" endtime="20230309 14:42:58.371"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SignupPopup}</arg>
+<arg>END</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230309 14:42:58.372" level="INFO">Clicking element '//span[@class='lgRightSection__close']' with END.</msg>
+<status status="PASS" starttime="20230309 14:42:58.371" endtime="20230309 14:42:58.831"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:58.371" endtime="20230309 14:42:58.832"/>
+</branch>
+<status status="PASS" starttime="20230309 14:42:58.371" endtime="20230309 14:42:58.832"/>
+</if>
+<status status="PASS" starttime="20230309 14:42:58.314" endtime="20230309 14:42:58.832"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:49.577" endtime="20230309 14:42:58.832"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:49.577" endtime="20230309 14:42:58.832"/>
+</kw>
+<test id="s1-t1" name="Book A Flight on Go Ibibogo and Verify" line="31">
+<kw name="Select Trip Type" library="robot_goibibokeyword">
+<arg>${trip_type}</arg>
+<doc>Select Trip Type to Book Flight</doc>
+<kw name="Log" library="BuiltIn">
+<arg>${trip_type}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230309 14:42:58.836" level="INFO">'multicity'</msg>
+<status status="PASS" starttime="20230309 14:42:58.835" endtime="20230309 14:42:58.836"/>
+</kw>
+<if>
+<branch type="IF" condition="${trip_type} == 'oneway'">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${one_way_radio_button}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.837" endtime="20230309 14:42:58.837"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${one_way_radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.837" endtime="20230309 14:42:58.837"/>
+</kw>
+<status status="NOT RUN" starttime="20230309 14:42:58.836" endtime="20230309 14:42:58.837"/>
+</branch>
+<branch type="ELSE IF" condition="${trip_type} == 'roundtrip'">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${round_trip_radio_button}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.837" endtime="20230309 14:42:58.838"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${round_trip_radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230309 14:42:58.838" endtime="20230309 14:42:58.838"/>
+</kw>
+<status status="NOT RUN" starttime="20230309 14:42:58.837" endtime="20230309 14:42:58.838"/>
+</branch>
+<branch type="ELSE IF" condition="${trip_type} == 'multicity'">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${multicity_radio_button}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230309 14:42:58.839" endtime="20230309 14:42:58.904"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${multicity_radio_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230309 14:42:58.905" level="INFO">Clicking element 'xpath=//span[text()='Multi-city']//parent::li'.</msg>
+<status status="PASS" starttime="20230309 14:42:58.904" endtime="20230309 14:42:59.072"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:58.838" endtime="20230309 14:42:59.072"/>
+</branch>
+<status status="PASS" starttime="20230309 14:42:58.836" endtime="20230309 14:42:59.072"/>
+</if>
+<status status="PASS" starttime="20230309 14:42:58.834" endtime="20230309 14:42:59.073"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230309 14:43:04.076" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230309 14:42:59.073" endtime="20230309 14:43:04.077"/>
+</kw>
+<status status="PASS" starttime="20230309 14:42:58.832" endtime="20230309 14:43:04.078"/>
+</test>
+<test id="s1-t2" name="Open Excel File and Read Content" line="35">
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${data}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230309 14:43:04.082" level="FAIL">NoOpenedDocumentsException: No opened documents in cache.</msg>
+<status status="FAIL" starttime="20230309 14:43:04.081" endtime="20230309 14:43:04.094"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230309 14:43:04.095" endtime="20230309 14:43:04.095"/>
+</kw>
+<tag>excel</tag>
+<status status="FAIL" starttime="20230309 14:43:04.079" endtime="20230309 14:43:04.104">NoOpenedDocumentsException: No opened documents in cache.</status>
+</test>
+<test id="s1-t3" name="Book a Bus and Verify" line="40">
+<kw name="Navigate to Bus Booking Page" library="robot_goibibokeyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${buse_page_link}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230309 14:43:04.115" endtime="20230309 14:43:04.168"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${buse_page_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230309 14:43:04.169" level="INFO">Clicking element 'xpath=//a[@href='/bus/']'.</msg>
+<status status="PASS" starttime="20230309 14:43:04.168" endtime="20230309 14:43:08.159"/>
+</kw>
+<status status="PASS" starttime="20230309 14:43:04.115" endtime="20230309 14:43:08.160"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${source_city}</var>
+<arg>3</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230309 14:43:08.162" level="FAIL">NoOpenedDocumentsException: No opened documents in cache.</msg>
+<status status="FAIL" starttime="20230309 14:43:08.161" endtime="20230309 14:43:08.163"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${dest_city}</var>
+<arg>4</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" starttime="20230309 14:43:08.163" endtime="20230309 14:43:08.163"/>
+</kw>
+<kw name="Enter Bus Source and Destination" library="robot_goibibokeyword">
+<arg>${source_city}</arg>
+<arg>${dest_city}</arg>
+<status status="NOT RUN" starttime="20230309 14:43:08.164" endtime="20230309 14:43:08.164"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230309 14:43:08.164" endtime="20230309 14:43:08.164"/>
+</kw>
+<tag>bus</tag>
+<status status="FAIL" starttime="20230309 14:43:04.112" endtime="20230309 14:43:08.165">NoOpenedDocumentsException: No opened documents in cache.</status>
+</test>
+<test id="s1-t4" name="Read Content from Json File" line="49">
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>test_json_file.json</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20230309 14:43:08.303" level="INFO">${json_object} = {'browser': 'Chrome', 'url': 'https://google.co.in'}</msg>
+<status status="PASS" starttime="20230309 14:43:08.170" endtime="20230309 14:43:08.303"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${value}</var>
+<arg>${json_object}</arg>
+<arg>$..url</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230309 14:43:08.370" level="INFO">${value} = ['https://google.co.in']</msg>
+<status status="PASS" starttime="20230309 14:43:08.305" endtime="20230309 14:43:08.370"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230309 14:43:08.373" level="INFO">['https://google.co.in']</msg>
+<status status="PASS" starttime="20230309 14:43:08.372" endtime="20230309 14:43:08.373"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230309 14:43:08.374" endtime="20230309 14:43:08.375"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${object_to_add}</var>
+<arg>country=India</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230309 14:43:08.377" level="INFO">${object_to_add} = {'country': 'India'}</msg>
+<status status="PASS" starttime="20230309 14:43:08.376" endtime="20230309 14:43:08.377"/>
+</kw>
+<kw name="Add Object To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${json_object}</arg>
+<arg>$..address</arg>
+<arg>${object_to_add}</arg>
+<doc>Add an dictionary or list object to json object using json_path</doc>
+<msg timestamp="20230309 14:43:08.438" level="FAIL">AttributeError: 'NoneType' object has no attribute 'lineno'</msg>
+<status status="FAIL" starttime="20230309 14:43:08.377" endtime="20230309 14:43:08.448"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${cvalue}</var>
+<arg>${json_object}</arg>
+<arg>$..country</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" starttime="20230309 14:43:08.451" endtime="20230309 14:43:08.451"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${cvalue}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230309 14:43:08.451" endtime="20230309 14:43:08.451"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${cvalue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230309 14:43:08.452" endtime="20230309 14:43:08.452"/>
+</kw>
+<tag>json</tag>
+<status status="FAIL" starttime="20230309 14:43:08.168" endtime="20230309 14:43:08.452">AttributeError: 'NoneType' object has no attribute 'lineno'</status>
+</test>
+<kw name="Close All Browser On the System" library="robot_goibibokeyword" type="TEARDOWN">
+<doc>Close all opened browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230309 14:43:08.455" endtime="20230309 14:43:14.972"/>
+</kw>
+<status status="PASS" starttime="20230309 14:43:08.455" endtime="20230309 14:43:14.972"/>
+</kw>
+<status status="FAIL" starttime="20230309 14:42:48.909" endtime="20230309 14:43:14.972"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">bus</stat>
+<stat pass="0" fail="1" skip="0">excel</stat>
+<stat pass="0" fail="1" skip="0">json</stat>
+</tag>
+<suite>
+<stat pass="1" fail="3" skip="0" id="s1" name="First Robot Goibibo Testcases2">First Robot Goibibo Testcases2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,24 @@
+1677755928740	geckodriver	INFO	Listening on 127.0.0.1:63477
+1677755931235	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63478" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\DEEPES~1\\AppData\\Local\\Temp\\rust_mozprofileVT9P1B"
+1677755932258	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Deepesh Yadav\\AppData\\Local\\Temp\\rust_mozprofileVT9P1B\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:63478/devtools/browser/b7074f77-e6ba-473c-b519-ec3fb4308db9
+1677755936862	Marionette	INFO	Listening on port 63487
+1677755937247	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.goibibo.com/h5sHPa/d0k4H/ZK45b/QWD4/O9t74mcr1uLY/KyMEeFx7bw/RiMQ/awUONX4, line 1: unreachable code after return statement
+1677755940622	Marionette	INFO	Stopped listening on port 63487
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 575: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+!!! error running onStopped callback: TypeError: callback is not a function
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x6A0027,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 596: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 596: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Deepesh Yadav\AppData\Local\Temp\rust_mozprofileVT9P1B\protections.sqlite
+1677755943350	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 64"  data: no] Stack trace: stop()@TargetObserver.jsm:64
+unwatchForTabs()@TargetList.jsm:70
+unwatchForTargets()@TargetList.jsm:37
+destructor()@TargetList.jsm:109
+close()@RemoteAgent.jsm:136

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230301 16:02:32.013" rpa="false" schemaversion="3">
+<suite id="s1" name="PaybotTest" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest">
+<suite id="s1-s1" name="First Robot Selenium Parallel2" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel2.robot">
+<test id="s1-s1-t1" name="Handle Browser Prompt Alert" line="45">
+<kw name="Open browser and launch url" type="SETUP">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>This keyword will open browser and launch url</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>${test_browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230301 16:02:32.389" level="INFO">Opening browser 'chrome' to base url 'https://automationbysqatools.blogspot.com/2021/05/dummy-website.html'.</msg>
+<status status="PASS" starttime="20230301 16:02:32.388" endtime="20230301 16:03:26.988"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230301 16:03:26.988" endtime="20230301 16:03:27.207"/>
+</kw>
+<status status="PASS" starttime="20230301 16:02:32.387" endtime="20230301 16:03:27.210"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://automationbysqatools.blogspot.com/2020/08/alerts.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230301 16:03:27.212" level="INFO">Opening url 'https://automationbysqatools.blogspot.com/2020/08/alerts.html'</msg>
+<status status="PASS" starttime="20230301 16:03:27.211" endtime="20230301 16:04:08.467"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>id=promptbtn</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230301 16:04:08.468" endtime="20230301 16:04:08.998"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=promptbtn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230301 16:04:09.002" level="INFO">Clicking element 'id=promptbtn'.</msg>
+<status status="PASS" starttime="20230301 16:04:08.999" endtime="20230301 16:04:09.124"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230301 16:04:11.130" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230301 16:04:09.125" endtime="20230301 16:04:11.130"/>
+</kw>
+<kw name="Input Text Into Alert" library="SeleniumLibrary">
+<arg>SQA Tools</arg>
+<doc>Types the given ``text`` into an input field in an alert.</doc>
+<status status="PASS" starttime="20230301 16:04:11.131" endtime="20230301 16:04:11.149"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230301 16:04:13.151" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230301 16:04:11.150" endtime="20230301 16:04:13.151"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${ui_confirm}</var>
+<arg>prompt</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230301 16:04:13.212" level="INFO">${ui_confirm} = Hello SQA Tools! How are you today?</msg>
+<status status="PASS" starttime="20230301 16:04:13.151" endtime="20230301 16:04:13.212"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${ui_confirm}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230301 16:04:13.216" level="INFO">Hello SQA Tools! How are you today?</msg>
+<status status="PASS" starttime="20230301 16:04:13.214" endtime="20230301 16:04:13.216"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>prompt_alert.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230301 16:04:13.528" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="prompt_alert.png"&gt;&lt;img src="prompt_alert.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230301 16:04:13.217" endtime="20230301 16:04:13.529"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${ui_confirm}</arg>
+<arg>${Prompt_Confirm}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230301 16:04:13.529" endtime="20230301 16:04:13.531"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230301 16:04:15.533" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230301 16:04:13.532" endtime="20230301 16:04:15.533"/>
+</kw>
+<kw name="Close All Browser On the System" type="TEARDOWN">
+<doc>Close all opened browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230301 16:04:15.537" endtime="20230301 16:04:22.093"/>
+</kw>
+<status status="PASS" starttime="20230301 16:04:15.534" endtime="20230301 16:04:22.094"/>
+</kw>
+<doc>This test cases is for handling the alerts
+we will excute script for the all the alerts</doc>
+<status status="PASS" starttime="20230301 16:02:32.386" endtime="20230301 16:04:22.095"/>
+</test>
+<status status="PASS" starttime="20230301 16:02:32.039" endtime="20230301 16:04:22.105"/>
+</suite>
+<status status="PASS" starttime="20230301 16:02:32.022" endtime="20230301 16:04:22.109"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PaybotTest">PaybotTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="First Robot Selenium Parallel2">PaybotTest.First Robot Selenium Parallel2</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230301 16:02:32.370" level="ERROR">Error in file 'E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel2.robot' on line 6: Resource file 'locators.robot' does not exist.</msg>
+</errors>
+</robot>

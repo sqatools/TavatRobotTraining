@@ -1,0 +1,26 @@
+==============================================================================
+PaybotTest                                                                    
+==============================================================================
+PaybotTest.First Robot Selenium Parallel3                                     
+==============================================================================
+Handle Browser Confirm Alerts :: This test cases is for handling t...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel3.robot:61
+    T:  Handle Browser Confirm Alerts    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\PaybotTest\first_robot_selenium_parallel3.robot:73
+      Should Be Equal    ${ui_confirm}    ${Accept_confirm}
+      |  ${ui_confirm} = You pressed OK! (str)
+      |  ${Accept_confirm} = You pressed OK!! (str)
+______________________________________________________________________________
+| FAIL |
+You pressed OK! != You pressed OK!!
+------------------------------------------------------------------------------
+PaybotTest.First Robot Selenium Parallel3                             | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+PaybotTest                                                            | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\pabot_results\2\output.xml

@@ -1,0 +1,18 @@
+1677497733297	geckodriver	INFO	Listening on 127.0.0.1:51904
+1677497736352	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51905" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\DEEPES~1\\AppData\\Local\\Temp\\rust_mozprofileyFdlud"
+1677497737379	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Deepesh Yadav\\AppData\\Local\\Temp\\rust_mozprofileyFdlud\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51905/devtools/browser/eb4aa2cc-4a4c-4e5f-b51d-8187a4b2e06f
+1677497742344	Marionette	INFO	Listening on port 51913
+1677497742412	Marionette	WARN	TLS certificate errors will be ignored for this session
+1677497751670	Marionette	INFO	Stopped listening on port 51913
+!!! error running onStopped callback: TypeError: callback is not a function
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Deepesh Yadav\AppData\Local\Temp\rust_mozprofileyFdlud\protections.sqlite
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1677497753093	RemoteAgent	ERROR	unable to stop listener: [Exception... "Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIWindowMediator.getEnumerator]"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: chrome://remote/content/cdp/observers/TargetObserver.jsm :: stop :: line 64"  data: no] Stack trace: stop()@TargetObserver.jsm:64
+unwatchForTabs()@TargetList.jsm:70
+unwatchForTargets()@TargetList.jsm:37
+destructor()@TargetList.jsm:109
+close()@RemoteAgent.jsm:136

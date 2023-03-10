@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.0 on win32)" generated="20230310 16:49:27.559" rpa="false" schemaversion="3">
+<suite id="s1" name="First Robot Selenium Parametrize" source="E:\Trainings\PythonRobotTavet14Feb2023\RobotframeworkProject\first_robot_selenium_parametrize.robot">
+<kw name="Open browser and launch url" type="SETUP">
+<arg>${url1}</arg>
+<arg>${browser}</arg>
+<doc>This keyword will open browser and launch url</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${server_url}</arg>
+<arg>${test_browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230310 16:49:28.994" level="INFO">Opening browser 'chrome' to base url 'https://automationbysqatools.blogspot.com/2021/05/dummy-website.html'.</msg>
+<status status="PASS" starttime="20230310 16:49:28.992" endtime="20230310 16:49:42.973"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230310 16:49:42.974" endtime="20230310 16:49:43.133"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:28.990" endtime="20230310 16:49:43.133"/>
+</kw>
+<test id="s1-t1" name="Lanch Different URL and Verify" line="24">
+<kw name="Nagivate To Url">
+<arg>${url1}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:43.137" level="INFO">Opening url 'https://automationbysqatools.blogspot.com/2021/05/dummy-website.html'</msg>
+<status status="PASS" starttime="20230310 16:49:43.137" endtime="20230310 16:49:46.985"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:43.136" endtime="20230310 16:49:46.985"/>
+</kw>
+<kw name="Nagivate To Url">
+<arg>${url2}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:46.987" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:49:46.986" endtime="20230310 16:49:48.784"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:46.986" endtime="20230310 16:49:48.784"/>
+</kw>
+<kw name="Nagivate To Url">
+<arg>${url3}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:48.787" level="INFO">Opening url 'https://google.co.in'</msg>
+<status status="PASS" starttime="20230310 16:49:48.786" endtime="20230310 16:49:51.350"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:48.785" endtime="20230310 16:49:51.350"/>
+</kw>
+<kw name="Nagivate To Url">
+<arg>${url4}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:51.352" level="INFO">Opening url 'https://sqatools.in'</msg>
+<status status="PASS" starttime="20230310 16:49:51.351" endtime="20230310 16:49:53.822"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:51.350" endtime="20230310 16:49:53.822"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:43.133" endtime="20230310 16:49:53.823"/>
+</test>
+<test id="s1-t2" name="Login to Facebook Website and Verify" line="32">
+<kw name="Login to Facebook">
+<arg>user1</arg>
+<arg>email1</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${facebook_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:53.827" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:49:53.827" endtime="20230310 16:49:54.844"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:49:54.844" endtime="20230310 16:49:54.914"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:49:54.915" level="INFO">Typing text 'user1' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:49:54.914" endtime="20230310 16:49:55.093"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:49:55.094" level="INFO">Typing text 'email1' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:49:55.093" endtime="20230310 16:49:55.300"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:49:57.302" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230310 16:49:55.300" endtime="20230310 16:49:57.303"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:53.826" endtime="20230310 16:49:57.303"/>
+</kw>
+<kw name="Login to Facebook">
+<arg>admin1</arg>
+<arg>admin@123</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${facebook_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:49:57.305" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:49:57.304" endtime="20230310 16:49:58.490"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:49:58.491" endtime="20230310 16:49:58.549"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:49:58.551" level="INFO">Typing text 'admin1' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:49:58.550" endtime="20230310 16:49:58.758"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:49:58.760" level="INFO">Typing text 'admin@123' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:49:58.758" endtime="20230310 16:49:58.973"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:00.974" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230310 16:49:58.973" endtime="20230310 16:50:00.974"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:57.304" endtime="20230310 16:50:00.974"/>
+</kw>
+<kw name="Login to Facebook">
+<arg>admin2</arg>
+<arg>admin@1234</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${facebook_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:50:00.975" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:50:00.975" endtime="20230310 16:50:02.186"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:50:02.186" endtime="20230310 16:50:02.236"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:02.238" level="INFO">Typing text 'admin2' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:50:02.237" endtime="20230310 16:50:02.369"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:02.369" level="INFO">Typing text 'admin@1234' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:50:02.369" endtime="20230310 16:50:02.567"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:04.568" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:02.567" endtime="20230310 16:50:04.568"/>
+</kw>
+<status status="PASS" starttime="20230310 16:50:00.974" endtime="20230310 16:50:04.568"/>
+</kw>
+<kw name="Login to Facebook">
+<arg>admin3</arg>
+<arg>admin@1235</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${facebook_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:50:04.569" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:50:04.569" endtime="20230310 16:50:05.441"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:50:05.441" endtime="20230310 16:50:05.486"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:05.487" level="INFO">Typing text 'admin3' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:50:05.486" endtime="20230310 16:50:05.622"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:05.624" level="INFO">Typing text 'admin@1235' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:50:05.622" endtime="20230310 16:50:05.802"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:07.803" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:05.803" endtime="20230310 16:50:07.804"/>
+</kw>
+<status status="PASS" starttime="20230310 16:50:04.568" endtime="20230310 16:50:07.804"/>
+</kw>
+<kw name="Login to Facebook">
+<arg>admin4</arg>
+<arg>admin@1236</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${facebook_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:50:07.806" level="INFO">Opening url 'https://facebook.com'</msg>
+<status status="PASS" starttime="20230310 16:50:07.805" endtime="20230310 16:50:08.590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:50:08.590" endtime="20230310 16:50:08.628"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:08.629" level="INFO">Typing text 'admin4' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:50:08.628" endtime="20230310 16:50:08.739"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:08.740" level="INFO">Typing text 'admin@1236' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:50:08.739" endtime="20230310 16:50:08.878"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:10.878" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:08.878" endtime="20230310 16:50:10.878"/>
+</kw>
+<status status="PASS" starttime="20230310 16:50:07.805" endtime="20230310 16:50:10.878"/>
+</kw>
+<doc>Login to Facebook Website and Verify</doc>
+<tag>facebook</tag>
+<status status="PASS" starttime="20230310 16:49:53.825" endtime="20230310 16:50:10.878"/>
+</test>
+<test id="s1-t3" name="Execute Java Script and Result" line="43">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('https://www.google.co.in')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:10.882" level="INFO">Executing JavaScript:
+window.open('https://www.google.co.in')
+Without any arguments.</msg>
+<status status="PASS" starttime="20230310 16:50:10.881" endtime="20230310 16:50:10.950"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:15.952" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:10.951" endtime="20230310 16:50:15.952"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handle}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20230310 16:50:15.972" level="INFO">${window_handle} = ['CDwindow-AD324983177ED37C3C4DF01C57D14F30', 'CDwindow-9B2BE1BCBC192FFBE69F4C3219773BCF']</msg>
+<status status="PASS" starttime="20230310 16:50:15.953" endtime="20230310 16:50:15.972"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handle}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230310 16:50:15.972" endtime="20230310 16:50:16.152"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${url_val}</var>
+<arg>return document.URL</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:16.157" level="INFO">Executing JavaScript:
+return document.URL
+Without any arguments.</msg>
+<msg timestamp="20230310 16:50:16.189" level="INFO">${url_val} = https://www.google.co.in/</msg>
+<status status="PASS" starttime="20230310 16:50:16.154" endtime="20230310 16:50:16.189"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${url_val}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230310 16:50:16.190" level="INFO">https://www.google.co.in/</msg>
+<status status="PASS" starttime="20230310 16:50:16.190" endtime="20230310 16:50:16.190"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${domain_val}</var>
+<arg>return document.Domain</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:16.191" level="INFO">Executing JavaScript:
+return document.Domain
+Without any arguments.</msg>
+<msg timestamp="20230310 16:50:16.207" level="INFO">${domain_val} = None</msg>
+<status status="PASS" starttime="20230310 16:50:16.190" endtime="20230310 16:50:16.207"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${domain_val}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230310 16:50:16.207" level="INFO">None</msg>
+<status status="PASS" starttime="20230310 16:50:16.207" endtime="20230310 16:50:16.207"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<var>${search_box}</var>
+<arg>return document.getElementsByName("q")</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:16.209" level="INFO">Executing JavaScript:
+return document.getElementsByName("q")
+Without any arguments.</msg>
+<msg timestamp="20230310 16:50:16.221" level="INFO">${search_box} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="96a29c7c3da4a911988580069c09572c", element="2dbf48ec-00cd-4fd9-88c1-5ace58ad278f")&gt;]</msg>
+<status status="PASS" starttime="20230310 16:50:16.208" endtime="20230310 16:50:16.221"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_box}</arg>
+<arg>Selenium</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:16.223" level="INFO">Typing text 'Selenium' into text field '[&lt;selenium.webdriver.remote.webelement.WebElement (session="96a29c7c3da4a911988580069c09572c", element="2dbf48ec-00cd-4fd9-88c1-5ace58ad278f")&gt;]'.</msg>
+<status status="PASS" starttime="20230310 16:50:16.222" endtime="20230310 16:50:16.607"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.getElementsByName("btnK")[0].click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:16.609" level="INFO">Executing JavaScript:
+document.getElementsByName("btnK")[0].click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20230310 16:50:16.608" endtime="20230310 16:50:21.469"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:26.476" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:21.469" endtime="20230310 16:50:26.476"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.close()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:26.481" level="INFO">Executing JavaScript:
+window.close()
+Without any arguments.</msg>
+<status status="PASS" starttime="20230310 16:50:26.478" endtime="20230310 16:50:26.567"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handle}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230310 16:50:26.568" endtime="20230310 16:50:26.597"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.open('${facebook_url}')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:26.599" level="INFO">Executing JavaScript:
+window.open('https://facebook.com')
+Without any arguments.</msg>
+<status status="PASS" starttime="20230310 16:50:26.597" endtime="20230310 16:50:26.693"/>
+</kw>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${window_handle}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20230310 16:50:26.717" level="INFO">${window_handle} = ['CDwindow-AD324983177ED37C3C4DF01C57D14F30', 'CDwindow-90573125E16371DD0B5FB4BC523A7B86']</msg>
+<status status="PASS" starttime="20230310 16:50:26.694" endtime="20230310 16:50:26.717"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handle}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230310 16:50:26.717" endtime="20230310 16:50:26.846"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>admiun@facebook.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:26.847" level="INFO">Typing text 'admiun@facebook.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230310 16:50:26.846" endtime="20230310 16:50:28.453"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>pass</arg>
+<arg>P@ssw0rd</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:28.456" level="INFO">Typing text 'P@ssw0rd' into text field 'pass'.</msg>
+<status status="PASS" starttime="20230310 16:50:28.454" endtime="20230310 16:50:28.712"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:33.713" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:28.712" endtime="20230310 16:50:33.715"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.close()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230310 16:50:33.720" level="INFO">Executing JavaScript:
+window.close()
+Without any arguments.</msg>
+<status status="PASS" starttime="20230310 16:50:33.715" endtime="20230310 16:50:33.779"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handle}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230310 16:50:33.779" endtime="20230310 16:50:33.808"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:38.809" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:33.808" endtime="20230310 16:50:38.810"/>
+</kw>
+<tag>script</tag>
+<status status="PASS" starttime="20230310 16:50:10.880" endtime="20230310 16:50:38.810"/>
+</test>
+<test id="s1-t4" name="Upload File and Verify" line="73">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://automationbysqatools.blogspot.com/2020/08/login.html</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230310 16:50:38.817" level="INFO">Opening url 'https://automationbysqatools.blogspot.com/2020/08/login.html'</msg>
+<status status="PASS" starttime="20230310 16:50:38.816" endtime="20230310 16:50:43.216"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=myFile</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230310 16:50:43.216" endtime="20230310 16:50:43.316"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>id=myFile</arg>
+<arg>E:\\Filesdata\\file1.txt</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230310 16:50:43.317" level="INFO">Sending E:\Filesdata\file1.txt to browser.</msg>
+<status status="PASS" starttime="20230310 16:50:43.316" endtime="20230310 16:50:44.079"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:49.082" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:44.080" endtime="20230310 16:50:49.083"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@type='file']//following-sibling::input[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230310 16:50:49.091" level="INFO">Clicking element 'xpath=//input[@type='file']//following-sibling::input[@type='submit']'.</msg>
+<status status="PASS" starttime="20230310 16:50:49.085" endtime="20230310 16:50:51.718"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230310 16:50:56.721" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230310 16:50:51.719" endtime="20230310 16:50:56.721"/>
+</kw>
+<tag>upload</tag>
+<status status="PASS" starttime="20230310 16:50:38.813" endtime="20230310 16:50:56.721"/>
+</test>
+<kw name="Close All Browser On the System" type="TEARDOWN">
+<doc>Close all opened browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230310 16:50:56.729" endtime="20230310 16:50:59.842"/>
+</kw>
+<status status="PASS" starttime="20230310 16:50:56.727" endtime="20230310 16:50:59.842"/>
+</kw>
+<status status="PASS" starttime="20230310 16:49:27.564" endtime="20230310 16:50:59.843"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">facebook</stat>
+<stat pass="1" fail="0" skip="0">script</stat>
+<stat pass="1" fail="0" skip="0">upload</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="First Robot Selenium Parametrize">First Robot Selenium Parametrize</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
